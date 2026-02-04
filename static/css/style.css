@@ -1,0 +1,63 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#score-title{
+    font-weight: bold;
+    font-size: 40px;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+#score{
+    font-style: italic;
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px 10px;
+}
+
+#dead-heart-1{
+    display: none;
+}
+
+#dead-heart-2{
+    display: none;
+}
+
+#dead-heart-3{
+    display: none;
+}
+
+#question{
+    min-height: 300px;
+}
+
+#answers{
+    width: 100%;
+}
+
+#answers-top-row{
+    display: flex;
+    width: 100%;
+}
+
+#answers-bottom-row{
+    display: flex;
+    width: 100%;
+}
+
+.answer-button{
+    width: 50%;
+    min-height: 100px;
+    box-sizing: border-box;
+
+    margin: 10px;
+    padding: 10px;
+}
