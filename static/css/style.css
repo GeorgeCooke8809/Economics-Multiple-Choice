@@ -23,16 +23,12 @@ header{
     margin: 0px 10px;
 }
 
-#dead-heart-1{
+.hidden-heart{
     display: none;
 }
 
-#dead-heart-2{
-    display: none;
-}
-
-#dead-heart-3{
-    display: none;
+.shown-heart{
+    display: flex;
 }
 
 #question{
