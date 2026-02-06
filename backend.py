@@ -46,7 +46,7 @@ class Data:
         else:
             return -1
 
-    def get_question(self, subjects:list = ["MACROECONOMICS", "MICROECONOMICS"]) -> tuple[int, str, tuple[tuple[str, str], tuple[str, str], tuple[str, str], tuple[str, str]]]:
+    def get_question(self, subjects:list = ["MACROECONOMICS", "MICROECONOMICS"]) -> dict:
         """
         Images will be entitled by the ID and will have the file type of jpg.
 
@@ -54,7 +54,7 @@ class Data:
         :param subjects: The subjects being studied (macroeconomics and/or microeconomics)
         :type subjects: list
         :return: Tuple of question in following format: (Question ID, Question, Option A, Option B, Option C, Option D)
-        :rtype: tuple[int, str, tuple[tuple[str, str], tuple[str, str], tuple[str, str], tuple[str, str]]]
+        :rtype: dict
         """
 
         with self.__connection() as connection:
@@ -66,12 +66,20 @@ class Data:
             else:
                 raise Exception("ERROR, failed to connect to database")
             
-        to_return = [question[0], question[1]]
         answers = [(question[2], "A"),(question[3], "B"), (question[4], "C"),(question[5], "D")]
         random.shuffle(answers)
-        to_return.append(answers)
+        answers = {
+            "one": answers[0],
+            "two": answers[1],
+            "three": answers[2],
+            "four": answers[3]
+        }
 
-        return to_return
+        return {
+                "questionID":question[0],
+                "question":question[1],
+                "answers":answers
+                }
 
     def check_answer(self, QuestionID:int, answer:str) -> bool:
         """        
