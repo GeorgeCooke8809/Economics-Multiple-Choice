@@ -15,6 +15,14 @@ def return_question():
 
     return jsonify(question_info)
 
+@app.route("/api/check-question/<id>/<choice>", methods=["POST"])
+def check_question(id, choice):
+    correctness = data.check_answer(id, choice)
+
+    return jsonify({
+        "correct": correctness
+    })
+
 @app.route("/", methods = ["GET"])
 def index():
     return flask.render_template("index.html")

@@ -63,3 +63,31 @@ header{
     margin: 10px;
     padding: 10px;
 }
+
+.correct-choice{
+    width: 50%;
+    min-height: 100px;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    margin: 10px;
+    padding: 10px;
+
+    background-color: #064a08;
+    color: white;
+}
+
+.incorrect-choice{
+    width: 50%;
+    min-height: 100px;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    margin: 10px;
+    padding: 10px;
+
+    background-color: #6b1b1b;
+    color: white;
+}
