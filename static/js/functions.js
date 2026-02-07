@@ -13,6 +13,15 @@ async function getQuestion(){
     global_json = await response.json();
     console.log(global_json);
 
+    image_container = document.getElementById("question-image")
+
+    image = document.createElement("img")
+    image.src = "/static/img/questionImages/downlod.jpeg"
+    image.alt = ""
+    image.class = "question-image"
+    
+    image_container.appendChild(image)
+
     displayQuestion();
 }
 
@@ -49,16 +58,14 @@ async function checkAnswer(id){
 
         if (user_correct){
             document.getElementById(id).className="correct-choice";
-            /*
-            TODO: play sound
-            */
+            
+            correct_sound.play()
+
             score += 10;
         }
         else{
-            /*
-            TODO: play sound
-            TODO: Update hearts
-            */
+            incorrect_sound.play()
+
             if (lives == 3){
                 document.getElementById("healthy-heart-1").classList.add("hidden-heart");
                 document.getElementById("healthy-heart-1").classList.remove("shown-heart");
@@ -93,6 +100,10 @@ async function checkAnswer(id){
             accepting_answers = true
             getQuestion();
         }
+        else{
+            document.getElementById("game-over").classList.add("game-over-shown")
+            document.getElementById("game-over").classList.remove("game-over-hidden");
+        }
     }
 }
 
@@ -100,5 +111,8 @@ let score = 0;
 let global_json = {};
 let lives = 3;
 let accepting_answers = true;
+
+var correct_sound = new Audio('static/audio/Correct.mp3');
+var incorrect_sound = new Audio('static/audio/Incorrect.mp3');
 
 getQuestion();
