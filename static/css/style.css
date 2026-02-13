@@ -1,0 +1,179 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#score-title{
+    font-weight: bold;
+    font-size: 40px;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+#score{
+    font-style: italic;
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px 10px;
+}
+
+.hidden-heart{
+    display: none;
+}
+
+.shown-heart{
+    display: flex;
+}
+
+#question{
+    min-height: 300px;
+    margin: 0px 10px;
+
+    font-size: 20px;
+}
+
+#question-image{
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;    
+}
+
+#question-image img{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 2rem;
+}
+
+#answers{
+    width: 100%;
+}
+
+#answers-top-row{
+    display: flex;
+    width: 100%;
+}
+
+#answers-bottom-row{
+    display: flex;
+    width: 100%;
+}
+
+.answer-button{
+    width: 50%;
+    min-height: 150px;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    margin: 10px;
+    padding: 10px;
+
+    background-color: #d6d6d6FF;
+    border-radius: 2rem;
+
+    border-style: none;
+
+    font-size: 20px;
+}
+
+.answer-button:hover{
+    background-color: rgb(197, 194, 194);
+}
+
+.correct-choice{
+    width: 50%;
+    min-height: 100px;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    margin: 10px;
+    padding: 10px;
+
+    background-color: #064a08;
+    color: white;
+
+    border-radius: 2rem;
+
+    border-style: none;
+
+    font-size: 20px;
+}
+
+.incorrect-choice{
+    width: 50%;
+    min-height: 100px;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    margin: 10px;
+    padding: 10px;
+
+    background-color: #6b1b1b;
+    color: white;
+
+    border-radius: 2rem;
+
+    border-style: none;
+
+    font-size: 20px;
+}
+
+#game-over h1{
+    font-size: 150px;
+    color: #bb1717;
+}
+
+.game-over-hidden{
+    display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.game-over-shown{
+    opacity: 0;
+    animation: fadeIn 1s ease-in;
+    animation-fill-mode: forwards;
+
+    display: flex;
+
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    backdrop-filter: blur(5px) brightness(80%);
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 999;
+
+    margin: auto;
+    padding: 15px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 950px) {
+    #game-over h1{
+        font-size: 60px;
+    }
+}
