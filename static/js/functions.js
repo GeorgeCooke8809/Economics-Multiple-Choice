@@ -13,10 +13,12 @@ async function getQuestion(){
     global_json = await response.json();
     console.log(global_json);
 
-    image_container = document.getElementById("question-image")
+    image_container = document.getElementById("question-image");
+
+    image_container.innerHTML="";
 
     image = document.createElement("img")
-    image.src = "/static/img/questionImages/downlod.jpeg"
+    image.src = `/static/img/questionImages/${global_json.questionID}.jpeg`
     image.alt = ""
     image.class = "question-image"
     

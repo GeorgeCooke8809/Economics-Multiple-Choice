@@ -44,12 +44,13 @@ header{
     width: 100%;
     margin: 10px;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
 }
 
 #question-image img{
     width: 100%;
     max-width: 500px;
+    border-radius: 2rem;
 }
 
 #answers{
